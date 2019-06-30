@@ -1,0 +1,18 @@
+.App {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
+  grid-auto-rows: 1fr;
+}
+
+.App::before {
+  content: "";
+  width: 0;
+  padding-bottom: 100%;
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
+
+.App > *:first-child {
+  grid-row: 1 / 1;
+  grid-column: 1 / 1;
+}
