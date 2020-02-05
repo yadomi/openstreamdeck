@@ -1,18 +1,23 @@
-import { resolve } from 'path'
-
-const initialize = () => {
-  const tiles = require(resolve(__dirname, '../../config.js'))
+const byId = tiles => {
   return tiles.reduce((sum, value, key) => {
-    sum[key] = value;
-    return sum;
+    sum[key] = value
+    return sum
   }, {})
 }
 
-const initialState = initialize();
-
-export default (store = initialState, action: { [type: string]: string }) => {
+export default initialState => (store = byId(initialState), action: { [type: string]: string }) => {
   switch (action.type) {
+    case 'TILE/SET_STATE':
+      return {
+        ...store,
+        [action.id]: {
+          ...store[action.id],
+          state: {
+            isLocked: action.isLocked
+          }
+        }
+      }
     default:
-      return store;
+      return store
   }
-};
+}

@@ -19,6 +19,7 @@
   overflow: hidden;
   background-size: cover;
   background-position: center;
+  transition: opacity ease-in-out 200ms;
 }
 
 .Tile > div span {
@@ -32,4 +33,8 @@
 
 .Tile > div:active {
   background: red;
+}
+
+.Tile[data-is-locked='true'] {
+  pointer-events: none;
 }
