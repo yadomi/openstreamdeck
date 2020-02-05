@@ -10,7 +10,7 @@ export default class Tile extends Component {
     const { name, style } = this.props;
     return (
       <div onClick={this.handleClick} className="Tile">
-        <div style={style}>{name}</div>
+        <div style={style}><span>{name}</span></div>
       </div>
     );
   }

@@ -5,15 +5,29 @@
 }
 
 .Tile > div {
-  border: 1px solid red;
+  user-select: none;
+  border: 1px solid darkturquoise;
   width: 100px;
   height: 100px;
   border-radius: 3px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-transform: uppercase;
   text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0.4);
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.Tile > div span {
+  margin: 12px;
+  background: white;
+  color: black;
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-size: 0.9em;
 }
 
 .Tile > div:active {

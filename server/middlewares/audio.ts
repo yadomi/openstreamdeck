@@ -1,5 +1,6 @@
 export default store => {
-    const manager = require("win-audio");
+    //const manager = require("win-audio");
+    const manager = {}
 
     return next => action => {
         if (/AUDIO/.test(action.type)) {
